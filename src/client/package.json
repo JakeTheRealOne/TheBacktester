@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "@expo/webpack-config": "^19.0.1",
-    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.17"
-  }
-}
