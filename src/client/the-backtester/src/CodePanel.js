@@ -5,6 +5,9 @@ import { createTheme } from '@uiw/codemirror-themes';
 import { python } from '@codemirror/lang-python';
 import { tags as t } from '@lezer/highlight';
 import { useCallback, useState, useRef } from 'react';
+import upload from './assets/upload.svg';
+import doc from './assets/doc.svg';
+import format from './assets/format.svg';
 
 
 const defaultTheme = createTheme({
@@ -49,6 +52,33 @@ class MyStrategy(Strategy):
         # todo
 `;
 
+function IconButton({src}) {
+  return (
+    <button className="iconButton">
+      <img className='iconImg' src={src} role="img" alt="" />
+    </button>
+  )
+}
+
+function CodeButtons() {
+  return (
+    <div className="codeButtons">
+      <IconButton src={doc} />
+      <IconButton src={format} />
+      <IconButton src={upload} />
+    </div>
+  );
+}
+
+function CodeTopBar() {
+  return (
+    <div className='codeTopBar'>
+      <p className='codeTopBarOption selected'>Python 3.15</p>
+      <CodeButtons />
+    </div>
+  )
+}
+
 export default function CodePanel() {
   const [value, setValue] = useState(templateBacktestingPy);
   const onChange = useCallback((val, viewUpdate) => {
@@ -56,19 +86,23 @@ export default function CodePanel() {
   }, []);
 
   return (
-    <CodeMirror
-      value={value}
-      theme={defaultTheme}
-      extensions={extensions}
-      className="codePanel"
-      onChange={onChange}
-      autoFocus={true}
-      basicSetup={{
-        foldGutter: false,
-        tabSize: 4
-      }}
-      minWidth="0px"
-      height="100%"
-    />
+    <div className="codePanelDiv">
+      <CodeTopBar />
+      <CodeMirror
+        value={value}
+        theme={defaultTheme}
+        extensions={extensions}
+        className="codePanel"
+        onChange={onChange}
+        autoFocus={true}
+        basicSetup={{
+          foldGutter: false,
+          tabSize: 4
+        }}
+        minWidth="0px"
+        height="100%"
+      />
+      <p>Bottom bar</p>
+    </div>
   );
 }

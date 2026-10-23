@@ -1,0 +1,171 @@
+
+.setBoolInput {
+  display: flex;
+  flex-direction: row;
+  color: #adadad;
+  font-size: 12px;
+  gap: 4px;
+  align-items: center;
+}
+
+.sbiSwitch {
+  position: relative;
+  display: inline-block;
+  width: 22px;
+  height: 12px;
+}
+
+.sbiSwitch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.sbiSlider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: transparent;
+  outline: solid #686868 1px;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.sbiSlider:before {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 8px;
+  left: 2px;
+  bottom: 2px;
+  background-color: #d2d2d2;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .sbiSlider {
+  background-color: #d2d2d2;
+}
+
+input:checked + .sbiSlider:before {
+  -webkit-transform: translateX(10px);
+  -ms-transform: translateX(10px);
+  transform: translateX(10px);
+}
+
+.setTextInput {
+  background-color: transparent;
+  border: solid #686868 1px;
+  color: #ccc;
+  padding: 4px;
+}
+
+.setTextInput:focus {
+  outline: none;
+  border-color: #ccc;
+}
+
+.settingsPanel1 {
+  margin: 8px;
+  gap: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.setTextDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  p {
+    font-size: 10px;
+    margin: 0;
+    padding: 0;
+  }
+
+  span {
+    font-size: 10px;
+    margin: 0;
+    padding: 0;
+    margin-right: 4px;
+  } 
+}
+
+.setTextLabelDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.settingsPanel11 {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  flex: 1;
+}
+
+.settingsPanel12 {
+  display: flex;
+  flex-direction: row;
+
+  gap: 8px;
+  flex: 1;
+}
+
+.selectOption {
+  /* border-radius: 0; */
+  /* background-color: #111111; */
+}
+
+.setSelectInput {
+  background-color: transparent;
+  border: solid #686868 1px;
+  color: #ccc;
+  padding: 4px;
+}
+
+.setSelectInput:focus {
+  outline: none;
+  border-color: #ccc;
+}
+
+.setDateInput {
+  background-color: transparent;
+  border: solid #686868 1px;
+  color: #ccc;
+  padding: 4px;
+}
+
+.setDateInput:focus {
+  outline: none;
+  border-color: #ccc;
+}
+
+.intervalInput {
+  flex: 1;
+}
+
+option {
+  background-color: #030303;
+}
+
+option:hover {
+  background-color: #242424;
+}
+
+.settingsPanelSeparator {
+  width: 1px;
+  height: 100%;
+  background-color: #0e0e0e;
+  margin: 0 16px;
+}
+
+.settingsPanel {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  height: 100%;
+}

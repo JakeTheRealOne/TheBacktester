@@ -1,0 +1,69 @@
+*:not(.codePanel) {
+  font-family: "Source Code Pro", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.codePanel {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: scroll;
+  scrollbar-color: #0b4f4b00 #5f9e9800;
+  scrollbar-width: thin;
+  /* padding-left: 16px;
+  padding-top: 8px; */
+}
+
+.codeTopBar {
+  margin: 0;
+  width: 100%;
+  border: #0e0e0e solid 1px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.codeTopBarOption {
+  margin: 0;
+  padding: 4px 8px;
+  border-bottom: 1px solid rgb(185, 185, 185);
+  opacity: 0.5;
+}
+
+.codeButtons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+  margin-right: 4px;
+  gap: 4px;
+}
+
+.iconImg {
+  height: 100%;
+  aspect-ratio: 1;
+  opacity: 0.75;
+
+  svg {
+    fill: #000;
+  }
+}
+
+.iconButton {
+  height: 80%;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  padding: 4px;
+}
+
+.iconButton:hover{
+  background-color: #212121;
+  filter: invert(1);
+}

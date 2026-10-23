@@ -1,7 +1,10 @@
 import './App.css';
+import './CodePanel.css';
+import './SettingsPanel.css';
 import { Grid, Cell, Gridline } from 'react-resizable-panels';
 import abacus from './assets/abacus.svg';
 import CodePanel from './CodePanel.js';
+import SettingsPanel from './SettingsPanel.js';
 import CodeMirror from '@uiw/react-codemirror';
 import { createTheme } from '@uiw/codemirror-themes';
 import { python } from '@codemirror/lang-python';
@@ -97,7 +100,7 @@ function TradingLayout() {
     <Grid
       className='tradingLayout'
       columns={[{ defaultSize: '40%', minSize: '10%' }, { minSize: '25%' }]}
-      rows={[{ defaultSize: '50%', minSize: '25%' }, { minSize: '25%' }]}
+      rows={[{ defaultSize: '65%', minSize: '25%' }, { minSize: '25%' }]}
     >
       <Gridline className='tradingHSeparator' type='column' column={1} />
       <Gridline className='tradingVSeparator' type='row' row={1} />
@@ -105,8 +108,9 @@ function TradingLayout() {
         <CodePanel/>
       </TradingPanel>
       <TradingPanel title="MARKET VIEW" row={0} column={1}/>
-      <TradingPanel title="BACKTEST SETTINGS" row={1} column={1}/>
-      
+      <TradingPanel title="BACKTEST SETTINGS" row={1} column={1}>
+        <SettingsPanel />
+      </TradingPanel>
     </Grid>
   );
 }
