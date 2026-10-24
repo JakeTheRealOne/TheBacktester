@@ -79,10 +79,23 @@ function CodeTopBar() {
   )
 }
 
+function CodeBottomBar() {
+  return (
+    <div className='codeBottomBar'>
+      <p className='codeBottomBarOption'>[saved]</p>
+      <p className='codeBottomBarOption'>Ln 6, Col 7</p>
+    </div>
+  )
+}
+
+
 export default function CodePanel() {
   const [value, setValue] = useState(templateBacktestingPy);
   const onChange = useCallback((val, viewUpdate) => {
     setValue(val);
+  }, []);
+  const onUpdate = useCallback((c) => {
+    console.log(c);
   }, []);
 
   return (
@@ -94,6 +107,7 @@ export default function CodePanel() {
         extensions={extensions}
         className="codePanel"
         onChange={onChange}
+        onUpdate={onUpdate}
         autoFocus={true}
         basicSetup={{
           foldGutter: false,
@@ -102,7 +116,7 @@ export default function CodePanel() {
         minWidth="0px"
         height="100%"
       />
-      <p>Bottom bar</p>
+      <CodeBottomBar />
     </div>
   );
 }

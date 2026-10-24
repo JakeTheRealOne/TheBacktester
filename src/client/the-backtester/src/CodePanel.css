@@ -32,6 +32,25 @@
   padding: 4px 8px;
   border-bottom: 1px solid rgb(185, 185, 185);
   opacity: 0.5;
+  white-space: nowrap;
+}
+
+.codeBottomBar {
+  margin: 0;
+  width: 100%;
+  border: #0e0e0e solid 1px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.codeBottomBarOption {
+  margin: 0;
+  padding: 4px 8px;
+  opacity: 0.5;
+  font-size: 12px;
 }
 
 .codeButtons {
@@ -66,4 +85,8 @@
 .iconButton:hover{
   background-color: #212121;
   filter: invert(1);
+}
+
+.codePanelDiv {
+  overflow: hidden;
 }

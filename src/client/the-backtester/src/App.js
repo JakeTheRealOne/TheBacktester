@@ -1,16 +1,12 @@
 import './App.css';
 import './CodePanel.css';
 import './SettingsPanel.css';
+import './MarketPanel.css';
 import { Grid, Cell, Gridline } from 'react-resizable-panels';
 import abacus from './assets/abacus.svg';
 import CodePanel from './CodePanel.js';
 import SettingsPanel from './SettingsPanel.js';
-import CodeMirror from '@uiw/react-codemirror';
-import { createTheme } from '@uiw/codemirror-themes';
-import { python } from '@codemirror/lang-python';
-import { tags as t } from '@lezer/highlight';
-import { useCallback, useState, useRef } from 'react';
-import React from 'react';
+import MarketPanel from './MarketPanel.js';
 
 function TBLogo() {
   return (
@@ -84,9 +80,9 @@ function TopBar() {
   );
 }
 
-function TradingPanel({ title, row, column, rowSpan=1, children }) {
+function TradingPanel({ title, row, column, rowSpan = 1, colSpan = 1, children }) {
   return (
-    <Cell className='tradingPanel' row={row} column={column} rowSpan={rowSpan}>
+    <Cell className='tradingPanel' row={row} column={column} rowSpan={rowSpan} columnSpan={colSpan}>
       <div className='panelTitle'>
         <p className='panelTitleOption selected'>{title}</p>
       </div>
@@ -102,15 +98,21 @@ function TradingLayout() {
       columns={[{ defaultSize: '40%', minSize: '10%' }, { minSize: '25%' }]}
       rows={[{ defaultSize: '65%', minSize: '25%' }, { minSize: '25%' }]}
     >
-      <Gridline className='tradingHSeparator' type='column' column={1} />
-      <Gridline className='tradingVSeparator' type='row' row={1} />
+      <Gridline className='tradingVSeparator' type='column' column={1} />
+      {/* <Gridline className='tradingVSeparator' type='column' column={2} /> */}
+      <Gridline className='tradingHSeparator' type='row' row={1} column={1} columnSpan={2} />
       <TradingPanel title="CODE" row={0} column={0} rowSpan={2}>
-        <CodePanel/>
+        <CodePanel />
       </TradingPanel>
-      <TradingPanel title="MARKET VIEW" row={0} column={1}/>
+      <TradingPanel title="CHART" row={0} column={1} colSpan={2}>
+        <MarketPanel />
+      </TradingPanel>
       <TradingPanel title="BACKTEST SETTINGS" row={1} column={1}>
         <SettingsPanel />
       </TradingPanel>
+      {/* <TradingPanel title="RESULTS" row={1} column={2}>
+        <SettingsPanel />
+      </TradingPanel> */}
     </Grid>
   );
 }

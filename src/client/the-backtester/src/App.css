@@ -66,12 +66,12 @@
   /* border-bottom: 2px solid rgba(124, 124, 124, 0.56); */
 }
 
-.tradingHSeparator {
+.tradingVSeparator {
   width: 1px;
   background-color: #181818;
 }
 
-.tradingVSeparator {
+.tradingHSeparator {
   height: 1px;
   background-color: #181818;
 }
