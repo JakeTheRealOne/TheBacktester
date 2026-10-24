@@ -1,0 +1,231 @@
+.marketTopBar {
+  margin: 0;
+  width: 100%;
+  border: #0e0e0e solid 1px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.marketTopBarOption {
+  margin: 0;
+  padding: 4px 8px;
+  border-bottom: 1px solid rgb(185, 185, 185);
+  opacity: 0.5;
+  white-space: nowrap;
+}
+
+.marketBottomBar {
+  margin: 0;
+  width: 100%;
+  border: #0e0e0e solid 1px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.marketBottomBarOption {
+  margin: 0;
+  padding: 4px 8px;
+  opacity: 0.5;
+  font-size: 12px;
+}
+
+.marketButtons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+  margin-right: 4px;
+  gap: 4px;
+}
+
+.marketIButtons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+  margin-left: 4px;
+  gap: 8px;
+}
+
+.iconImg {
+  height: 100%;
+  aspect-ratio: 1;
+  opacity: 0.75;
+
+  svg {
+    fill: #000;
+  }
+}
+
+.iconButton {
+  height: 80%;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  padding: 4px;
+}
+
+.iconButton:hover {
+  background-color: #212121;
+  filter: invert(1);
+}
+
+.txtButton {
+  height: 80%;
+  /* aspect-ratio: 1; */
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  padding: 4px;
+
+  p {
+    color: #dedede;
+    margin: 0;
+    opacity: 0.8;
+  }
+}
+
+.txtButton:hover {
+  background-color: #212121;
+  filter: invert(1);
+}
+
+.txtButton:focus {
+  /* background-color: #212121;
+  filter: invert(1);/*/
+  outline: none;
+
+  p {
+    outline: dashed #dedede7c 1px;
+  }
+}
+
+.txtButton.selected {
+  border-top: #dedede solid 1px;
+}
+
+.txtButton.selected:hover {
+  border-top: transparent solid 1px;
+}
+
+.marketPanelDiv {
+  overflow: hidden;
+}
+
+.chartDiv {
+  width: 100%;
+  height: 100%;
+}
+
+.currentCandleTable {
+  position: absolute;
+  z-index: 2;
+  border: #0e0e0e solid 1px;
+  background-color: #030303;
+  padding: 8px;
+  border-spacing: 10px 1px;
+  font-size: small;
+}
+
+.actionPriceLabel {
+  position: relative;
+  top: 8px;
+  left: 8px;
+  font-size: 32px;
+}
+
+.marketPanelDiv {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.marketSymbol {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  padding: 4px 8px;
+}
+
+.msValueP {
+  margin: 0;
+  opacity: 0.7;
+  font-weight: 600;
+}
+
+.msFullnameP {
+  margin: 0;
+  opacity: 0.6;
+}
+
+.chart {
+  padding: 8px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.chartCandleDiv {
+  position: relative;
+  flex: 1;
+  height: 100%;
+}
+
+.chartCandle {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+}
+
+.chartCandleCaret {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+}
+
+.greenCandle {
+  background-color: #01dd81;
+}
+
+.redCandle {
+  background-color: #fa3d59;
+}
+
+.chartCandleStick {
+  position: absolute;
+  height: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.5;
+}
+
+.chartCandleDiv:hover {
+  .chartCandleStick {
+    border-left: #cecece dashed 1px;
+  }
+}
+
+.chartCandleStickHard {
+  position: absolute;
+  height: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.5;
+  border-left: #262626 solid 1px;
+}

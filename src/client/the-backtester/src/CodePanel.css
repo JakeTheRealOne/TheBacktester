@@ -87,6 +87,12 @@
   filter: invert(1);
 }
 
+.iconButton:focus{
+  background-color: #212121;
+  filter: invert(1);
+  outline: none;
+}
+
 .codePanelDiv {
   overflow: hidden;
 }

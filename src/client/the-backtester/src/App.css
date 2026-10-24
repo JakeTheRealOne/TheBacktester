@@ -67,13 +67,15 @@
 }
 
 .tradingVSeparator {
-  width: 1px;
-  background-color: #181818;
+  width: 6px;
+  border: solid #181818 1px;  
+  background-color: #030303;
 }
 
 .tradingHSeparator {
-  height: 1px;
-  background-color: #181818;
+  height: 6px;
+  border: solid #181818 1px;
+  background-color: #030303;
 }
 
 .tbLogo {

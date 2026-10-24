@@ -95,7 +95,7 @@ export default function CodePanel() {
     setValue(val);
   }, []);
   const onUpdate = useCallback((c) => {
-    console.log(c);
+    // console.log(c);
   }, []);
 
   return (

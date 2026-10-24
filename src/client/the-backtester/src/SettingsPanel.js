@@ -47,9 +47,9 @@ function CommissionInput({ value }) {
 function BoolInput({ label }) {
   return (
     <div className="setBoolInput">
-      <label class="sbiSwitch">
+      <label className="sbiSwitch">
         <input type="checkbox" />
-        <span class="sbiSlider"></span>
+        <span className="sbiSlider"></span>
       </label>
 
       <span className="sbiLabel"></span>
