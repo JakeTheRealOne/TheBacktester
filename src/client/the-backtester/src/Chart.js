@@ -27,15 +27,15 @@ function CurrentCandleTable({ candle }) {
     <div>
       {candle &&
         <table className="currentCandleTable">
-          {/* <p>{new Date(candle.timestamp).toString()}</p> */}
+          <p>{new Date(candle.timestamp).toISOString().split('T')[0]}</p>
           <tr>
-            <td>open</td><td>{candle.content.open.toFixed(2)}</td>
+            <td className="td">open</td><td>{candle.content.open.toFixed(2)}</td>
           </tr>
           <tr>
-            <td>high</td><td>{candle.content.high.toFixed(2)}</td>
+            <td className="td">high</td><td>{candle.content.high.toFixed(2)}</td>
           </tr>
           <tr>
-            <td>low</td><td>{candle.content.low.toFixed(2)}</td>
+            <td className="td">low</td><td>{candle.content.low.toFixed(2)}</td>
           </tr>
           <tr>
             <td className="td">close</td><td>{candle.content.close.toFixed(2)}</td>
@@ -48,7 +48,7 @@ function CurrentCandleTable({ candle }) {
   )
 }
 
-export default function Chart({ json, interval }) {
+export default function Chart({ json, interval, span }) {
   const [rawData, setRawData] = useState(json);
   const [data, setData] = useState([]);
   const [maxPrice, setMaxPrice] = useState(null);
@@ -92,12 +92,16 @@ export default function Chart({ json, interval }) {
     setMinPrice(min);
   }, [rawData]);
 
+  let sizeOfInner = Math.round(((data.length / span.toFixed(2)) * 100));
+
   return (
     <div className="chart" onMouseLeave={() => [setCurrentCandle(null)]}>
       <CurrentCandleTable candle={currentCandle} />
-      {data.map((c, i) => <ChartCandle candle={c} maxPrice={maxPrice} minPrice={minPrice} onceEvery7={i % 7} onHover={() => {
-        setCurrentCandle(c)
-      }} />)}
+      <div className="innerChart" style={{flex: `0 0 ${sizeOfInner}%`}}>
+        {data.map((c, i) => <ChartCandle candle={c} maxPrice={maxPrice} minPrice={minPrice} onceEvery7={i % 7} onHover={() => {
+          setCurrentCandle(c)
+        }} />)}
+      </div>
     </div>
   );
 }

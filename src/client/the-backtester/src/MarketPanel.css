@@ -127,6 +127,10 @@
   height: 100%;
 }
 
+.td {
+  opacity: 0.5;
+}
+
 .currentCandleTable {
   position: absolute;
   z-index: 2;
@@ -135,6 +139,10 @@
   padding: 8px;
   border-spacing: 10px 1px;
   font-size: small;
+
+  p {
+    margin: 0;
+  }
 }
 
 .actionPriceLabel {
@@ -177,11 +185,34 @@
   height: 100%;
   display: flex;
   flex-direction: row;
+  overflow-x: auto;
+}
+
+/* .innerChart {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  flex: 0 0 200%;
 }
 
 .chartCandleDiv {
   position: relative;
-  flex: 1;
+  flex: 0 0 auto;
+  height: 100%;
+} */
+
+.innerChart {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.chartCandleDiv {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 0;
   height: 100%;
 }
 
@@ -200,11 +231,16 @@
 }
 
 .greenCandle {
-  background-color: #01dd81;
+  /* background-color: #01dd81; */
+  /* background-color: #01dd81; */
+  background-color: #030303;
+  border: #01dd81 solid 1px;
 }
 
 .redCandle {
-  background-color: #fa3d59;
+  /* background-color: #fa3d59; */
+  background-color: #030303;
+  border: #fa3d59 solid 1px;
 }
 
 .chartCandleStick {

@@ -4,7 +4,7 @@ import indicator from './assets/indicator.svg';
 import settings from './assets/settings.svg';
 import { useState } from 'react';
 import Chart from './Chart.js';
-var factice_json = require('./assets/factice.json');
+var factice_json = require('./assets/ohlc.json');
 
 function IconButton({ src }) {
   return (
@@ -77,7 +77,7 @@ function MarketBottomBar({interval, setInterval}) {
 function ChartDiv() {
   return (
     <div className="chartDiv">
-      <Chart json={factice_json} interval={86400000} />
+      <Chart json={factice_json} interval={86400000} span={60} />
     </div>
   )
 }
